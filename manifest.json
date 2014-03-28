@@ -1,0 +1,25 @@
+{
+  "name": "Benton's Quick Keys",
+ "version": "0.0",
+  "manifest_version": 2,
+  "description": "Simple Quick Keys for the Chrome Power User",
+  "permissions": [
+    "tabs",
+    "background"
+  ],
+  "browser_action": {
+    "default_icon": "imgs/icon.png",
+    "default_name": "Crome Quickies"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://www.facebook.com/"],
+      "js": ["js/jquery.min.js"],
+      "run_at": "document_start"  
+    }
+  ],
+  "background": {
+    "scripts": ["js/main.js"]
+  },
+  "web_accessible_resources": ["js/jquery-2.0.3.min.map", "js/jquery.min.js", "js/main.js"]
+}
